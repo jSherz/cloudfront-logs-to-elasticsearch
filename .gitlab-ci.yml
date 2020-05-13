@@ -5,12 +5,16 @@ stages:
   - test
 
 lint:
+  tags:
+    - docker
   stage: lint
   script:
     - sbt scalastyle
     - sbt test:scalastyle
 
 test:
+  tags:
+    - docker
   stage: test
   script:
     - sbt coverage test coverageReport
