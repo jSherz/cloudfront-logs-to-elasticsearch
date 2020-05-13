@@ -1,8 +1,7 @@
 package com.jsherz.cloudfrontlogstoes
 
-import java.security.MessageDigest
 import java.text.SimpleDateFormat
-import java.util.{Calendar, Date, GregorianCalendar}
+import java.util.Date
 
 import spray.json.{
   DefaultJsonProtocol,

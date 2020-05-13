@@ -13,7 +13,10 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-stream" % AkkaVersion,
   "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
   "com.typesafe.akka" %% "akka-http-xml" % AkkaHttpVersion,
-  "software.amazon.awssdk" % "s3" % "2.11.3"
+  "software.amazon.awssdk" % "s3" % "2.11.3",
+  "org.scalactic" %% "scalactic" % "3.1.1",
+  "org.scalatest" %% "scalatest" % "3.1.1" % Test,
+  "com.typesafe.akka" %% "akka-testkit" % AkkaVersion % Test
 )
 
 scalacOptions ++= Seq(
@@ -31,3 +34,7 @@ scalacOptions ++= Seq(
   "-Wunused",
   "-language:postfixOps"
 )
+
+scalastyleFailOnWarning := true
+
+coverageEnabled := true

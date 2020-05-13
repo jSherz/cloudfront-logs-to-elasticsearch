@@ -1,0 +1,16 @@
+image: jsherz/base-java-container:openjdk-11-buster
+
+stages:
+  - lint
+  - test
+
+lint:
+  stage: lint
+  script:
+    - sbt scalastyle
+    - sbt test:scalastyle
+
+test:
+  stage: test
+  script:
+    - sbt coverage test coverageReport

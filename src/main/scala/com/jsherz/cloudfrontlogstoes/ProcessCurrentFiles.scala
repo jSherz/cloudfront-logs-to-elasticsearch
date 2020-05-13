@@ -18,6 +18,8 @@ object ProcessCurrentFiles extends App {
 
   val bucket = "jsherz-logs"
 
+  val numWorkers = 10
+
   implicit val system: ActorSystem = ActorSystem("ProcessCurrentFiles")
   implicit val materializer: Materializer = Materializer.matFromSystem
 
@@ -28,15 +30,17 @@ object ProcessCurrentFiles extends App {
   import LogEntryJsonProtocol._
 
   implicit val esClient: RestClient =
-    RestClient.builder(new HttpHost("vms", 9200)).build()
+    RestClient
+      .builder(new HttpHost("vms", 9200)) // scalastyle:ignore magic.number
+      .build()
 
   val esSettings = ElasticsearchWriteSettings()
     .withApiVersion(ApiVersion.V7)
-    .withBufferSize(100)
+    .withBufferSize(100) // scalastyle:ignore magic.number
     .withRetryLogic(RetryWithBackoff(3, 100 millis, 5 seconds))
 
   source
-    .mapAsync(10)(downloader.downloadAndGunzip)
+    .mapAsync(numWorkers)(downloader.downloadAndGunzip)
     .via(new ParseLogFileFlow)
     // turn into ES message
     // bulk to ES

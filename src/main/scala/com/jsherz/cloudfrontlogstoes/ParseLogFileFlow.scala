@@ -19,14 +19,22 @@ class ParseLogFileFlow extends GraphStage[FlowShape[String, LogEntry]] {
   override val shape: FlowShape[String, LogEntry] = FlowShape.of(in, out)
 
   private def noneIfHyphen(input: String): Option[String] = {
-    if (input == "-") None
-    else Some(input)
+    if (input == "-") {
+      None
+    } else {
+      Some(input)
+    }
   }
 
   private def noneIfHyphenInt(input: String): Option[Int] = {
-    if (input == "-") None
-    else Some(input.toInt)
+    if (input == "-") {
+      None
+    } else {
+      Some(input.toInt)
+    }
   }
+
+  // scalastyle:off method.length
 
   private def parseFile(input: String): Iterator[LogEntry] = {
     val lines = input.split("\n")
@@ -37,6 +45,8 @@ class ParseLogFileFlow extends GraphStage[FlowShape[String, LogEntry]] {
         .slice(2, Integer.MAX_VALUE)
         .map(line => {
           val parts = line.split("\t")
+
+          // scalastyle:off magic.number
 
           try {
             LogEntry(
@@ -84,6 +94,8 @@ class ParseLogFileFlow extends GraphStage[FlowShape[String, LogEntry]] {
                 ex
               )
           }
+
+          // scalastyle:on magic.number
         })
         .iterator
     } else {
@@ -92,6 +104,8 @@ class ParseLogFileFlow extends GraphStage[FlowShape[String, LogEntry]] {
       )
     }
   }
+
+  // scalastyle:on method.length
 
   override def createLogic(inheritedAttributes: Attributes): GraphStageLogic =
     new GraphStageLogic(shape) {

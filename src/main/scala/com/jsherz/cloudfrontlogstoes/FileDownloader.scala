@@ -20,6 +20,7 @@ import scala.io.Source
   * Used to download and decompress the log files stored in S3.
   */
 class FileDownloader(private implicit val system: ActorSystem) {
+
   private val s3Client = S3AsyncClient.builder().build()
 
   private implicit val executionContext: MessageDispatcher =
