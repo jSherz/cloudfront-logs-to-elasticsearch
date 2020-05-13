@@ -1,4 +1,5 @@
-image: jsherz/base-java-container:openjdk-11-buster
+#image: jsherz/base-java-container:openjdk-11-buster
+image: scm.int.jsherz.com:5005/jsherz/base-java-container
 
 stages:
   - lint
