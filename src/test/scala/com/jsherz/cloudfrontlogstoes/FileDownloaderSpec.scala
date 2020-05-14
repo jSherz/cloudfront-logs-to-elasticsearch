@@ -10,6 +10,7 @@ import akka.testkit.TestKit
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.funspec.AnyFunSpecLike
 import software.amazon.awssdk.core.async.AsyncRequestBody
+import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.S3AsyncClient
 import software.amazon.awssdk.services.s3.model.{
   DeleteObjectRequest,

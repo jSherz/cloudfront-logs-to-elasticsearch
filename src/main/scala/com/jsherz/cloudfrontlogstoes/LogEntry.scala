@@ -1,6 +1,7 @@
 package com.jsherz.cloudfrontlogstoes
 
 import java.text.SimpleDateFormat
+import java.time.Instant
 import java.util.Date
 
 import spray.json.{
@@ -69,12 +70,10 @@ case class LogEntryResponse(
 
 object LogEntryJsonProtocol extends DefaultJsonProtocol {
   implicit object DateJsonFormat extends RootJsonFormat[Date] {
-    val format = new SimpleDateFormat()
-
     override def read(json: JsValue): Date =
-      format.parse(json.convertTo[String])
+      Date.from(Instant.parse(json.convertTo[String]))
 
-    override def write(obj: Date): JsValue = JsString(obj.toString)
+    override def write(obj: Date): JsValue = JsString(obj.toInstant.toString)
   }
 
   implicit val logEntryRequestFormat: JsonFormat[LogEntryRequest] =

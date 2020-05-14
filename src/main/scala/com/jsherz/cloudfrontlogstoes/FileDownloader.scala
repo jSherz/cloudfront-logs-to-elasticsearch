@@ -6,6 +6,7 @@ import akka.actor.ActorSystem
 import akka.dispatch.MessageDispatcher
 import akka.stream.alpakka.s3.ListBucketResultContents
 import software.amazon.awssdk.core.async.AsyncResponseTransformer
+import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.S3AsyncClient
 import software.amazon.awssdk.services.s3.model.{
   GetObjectRequest,

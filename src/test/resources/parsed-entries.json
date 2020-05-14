@@ -1,0 +1,59 @@
+[{
+  "date": "2020-02-10T00:45:22Z",
+  "edgeDetailedResultType": "Hit",
+  "edgeLocation": "DFW50-C1",
+  "edgeRequestId": "N7VP_bDCZu6MTV31ZOMnTnVPT7kd75TUjRO1a1EZIa_xLb16Q8zUdw==",
+  "edgeResponseResultType": "Hit",
+  "edgeResultType": "Hit",
+  "request": {
+    "bytes": 224,
+    "host": "d2o75d34ulysbt.cloudfront.net",
+    "hostHeader": "jsherz.com",
+    "ip": "66.249.65.178",
+    "method": "GET",
+    "port": 61383,
+    "protocol": "https",
+    "protocolVersion": "HTTP/1.1",
+    "sslCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+    "sslProtocol": "TLSv1.2",
+    "uriStem": "/robots.txt",
+    "userAgent": "Mozilla/5.0 (compatible; Googlebot/2.1;  http://www.google.com/bot.html)"
+  },
+  "response": {
+    "bytes": 546,
+    "contentLen": 54,
+    "contentType": "text/plain",
+    "status": 200
+  },
+  "timeTaken": 0.115,
+  "timeToFirstByte": 0.115
+}, {
+  "date": "2020-02-10T00:45:23Z",
+  "edgeDetailedResultType": "Miss",
+  "edgeLocation": "DFW50-C1",
+  "edgeRequestId": "RKs-ixsMHdwW2W8XufPYLhg52wchg2iiOy4Ko0meBwpZlPxSB4JU1g==",
+  "edgeResponseResultType": "Miss",
+  "edgeResultType": "Miss",
+  "request": {
+    "bytes": 255,
+    "host": "d2o75d34ulysbt.cloudfront.net",
+    "hostHeader": "jsherz.com",
+    "ip": "66.249.65.182",
+    "method": "GET",
+    "port": 64810,
+    "protocol": "https",
+    "protocolVersion": "HTTP/1.1",
+    "sslCipher": "ECDHE-RSA-AES128-GCM-SHA256",
+    "sslProtocol": "TLSv1.2",
+    "uriStem": "/aws/cloudwatch/logs/2019/06/05/debugging-incorrect-timestamps-with-cwa.html",
+    "userAgent": "Mozilla/5.0 (compatible; Googlebot/2.1;  http://www.google.com/bot.html)"
+  },
+  "response": {
+    "bytes": 17063,
+    "contentLen": 16580,
+    "contentType": "text/html",
+    "status": 200
+  },
+  "timeTaken": 0.399,
+  "timeToFirstByte": 0.329
+}]
