@@ -19,3 +19,11 @@ test:
   stage: test
   script:
     - sbt coverage test coverageReport
+  artifacts:
+    when: always
+    paths:
+      - ./target/test-reports/**/*.xml
+      - ./target/scala-2.13/scoverage-report/**/*
+    reports:
+      junit:
+        - ./target/test-reports/**/*.xml
