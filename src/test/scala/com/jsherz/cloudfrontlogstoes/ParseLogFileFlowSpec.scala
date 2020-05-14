@@ -34,8 +34,6 @@ class ParseLogFileFlowSpec
 
     val result = Await.result(resultFuture, 3 seconds)
 
-    println(result.toJson.prettyPrint)
-
     assert(result.length === 2)
     assert(result == parsedEntries.parseJson.convertTo[Seq[LogEntry]])
   }
