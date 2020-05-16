@@ -4,7 +4,7 @@ This project accompanies the [blog post on my website]. It's used to
 ship logs from a CloudFront distribution and put them into Elasticsearch
 for analysis with a tool like Kibana or Grafana.
 
-[blog post on my website]:
+[blog post on my website]: https://jsherz.com/cloudfront/aws/scala/akka/elasticsearch/2020/05/16/analytics-for-cloudfront-distributions.html
 
 ## Setting up the index pattern
 
