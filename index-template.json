@@ -1,0 +1,159 @@
+{
+  "index_patterns": "cloudfront-logs-*",
+  "settings": {
+    "number_of_shards": 1,
+    "default_pipeline": "cloudfront-logs"
+  },
+  "mappings": {
+    "dynamic": "false",
+    "properties": {
+      "date": {
+        "type": "date"
+      },
+      "edgeDetailedResultType": {
+        "type": "keyword"
+      },
+      "edgeLocation": {
+        "type": "keyword"
+      },
+      "edgeRequestId": {
+        "type": "keyword"
+      },
+      "edgeResponseResultType": {
+        "type": "keyword"
+      },
+      "edgeResultType": {
+        "type": "keyword"
+      },
+      "request": {
+        "properties": {
+          "bytes": {
+            "type": "long"
+          },
+          "forwardedFor": {
+            "type": "keyword"
+          },
+          "host": {
+            "type": "keyword"
+          },
+          "hostHeader": {
+            "type": "keyword"
+          },
+          "ip": {
+            "type": "ip"
+          },
+          "method": {
+            "type": "keyword"
+          },
+          "port": {
+            "type": "long"
+          },
+          "protocol": {
+            "type": "keyword"
+          },
+          "protocolVersion": {
+            "type": "keyword"
+          },
+          "referer": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "sslCipher": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "sslProtocol": {
+            "type": "keyword"
+          },
+          "uriQuery": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "uriStem": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "userAgent": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "response": {
+        "properties": {
+          "bytes": {
+            "type": "long"
+          },
+          "contentLen": {
+            "type": "long"
+          },
+          "contentType": {
+            "type": "keyword"
+          },
+          "rangeEnd": {
+            "type": "long"
+          },
+          "rangeStart": {
+            "type": "long"
+          },
+          "status": {
+            "type": "long"
+          }
+        }
+      },
+      "timeTaken": {
+        "type": "float"
+      },
+      "timeToFirstByte": {
+        "type": "float"
+      },
+      "geoip": {
+        "properties": {
+          "continent_name": {
+            "type": "keyword"
+          },
+          "region_iso_code": {
+            "type": "keyword"
+          },
+          "city_name": {
+            "type": "keyword"
+          },
+          "country_iso_code": {
+            "type": "keyword"
+          },
+          "region_name": {
+            "type": "keyword"
+          },
+          "location": {
+            "type": "geo_point"
+          }
+        }
+      }
+    }
+  }
+}

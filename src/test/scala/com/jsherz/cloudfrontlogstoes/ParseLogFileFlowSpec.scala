@@ -4,13 +4,13 @@ import java.nio.file.{Files, Path}
 
 import akka.actor.ActorSystem
 import akka.stream.scaladsl.{Keep, Sink, Source}
-import akka.testkit.{TestKit, TestProbe}
+import akka.testkit.TestKit
+import com.jsherz.cloudfrontlogstoes.LogEntryJsonProtocol._
 import org.scalatest.funspec.AnyFunSpecLike
+import spray.json._
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
-import spray.json._
-import com.jsherz.cloudfrontlogstoes.LogEntryJsonProtocol._
 
 class ParseLogFileFlowSpec
     extends TestKit(ActorSystem("ParseLogFileFlowSpec"))
