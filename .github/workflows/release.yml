@@ -27,7 +27,7 @@ jobs:
       run: sbt scalastyle
 
     - name: Test
-      run: sbt test
+      run: sbt coverage test coverageReport
 
     - name: Build shaded jar
       run: sbt 'set test in assembly := {}' clean coverageOff assembly
