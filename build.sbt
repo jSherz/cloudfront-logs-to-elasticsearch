@@ -2,7 +2,7 @@ import org.apache.ivy.core.module.descriptor.ExcludeRule
 
 name := "cloudfront-logs-to-elasticsaerch"
 
-version := "0.1"
+version := "1.0"
 
 scalaVersion := "2.13.2"
 
