@@ -43,8 +43,6 @@ scalacOptions ++= Seq(
 
 scalastyleFailOnWarning := true
 
-coverageEnabled := true
-//software.amazon.awssdk.http.async.SdkAsyncHttpService
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", "io.netty.versions.properties") =>
     MergeStrategy.discard
