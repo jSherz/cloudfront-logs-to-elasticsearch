@@ -40,7 +40,7 @@ server running this daemon. The tests aren't set to run as they're
 currently using a hardcoded bucket name for integration testing with S3.
 
 ```bash
-sbt 'set test in assembly := {}' clean assembly
+sbt 'set test in assembly := {}' clean coverageOff assembly
 ```
 
 Creates:

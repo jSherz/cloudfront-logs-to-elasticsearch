@@ -25,9 +25,12 @@ jobs:
 
     - name: Lint
       run: sbt scalastyle
-    
+
+    - name: Test
+      run: sbt test
+
     - name: Build shaded jar
-      run: sbt assembly
+      run: sbt coverageOff assembly
     
     - name: Move jar to predictable name
       run: mv target/scala-2.13/*.jar target/cloudfront-logs-to-elasticsearch.jar
