@@ -46,7 +46,7 @@ sbt 'set test in assembly := {}' clean coverageOff assembly
 Creates:
 
 ```
-target/scala-2.13/cloudfront-logs-to-elasticsaerch-assembly-0.1.jar
+target/scala-2.13/cloudfront-logs-to-elasticsearch-assembly-0.1.jar
 ```
 
 ## Importing historic data
@@ -57,7 +57,7 @@ loading in that data:
 ```bash
 export LOGS_BUCKET=jsherz-logs
 export ELASTICSEARCH_HOST=http://vms:9200
-java -cp target/scala-2.13/cloudfront-logs-to-elasticsaerch-assembly-0.1.jar com.jsherz.cloudfrontlogstoes.ProcessCurrentFiles
+java -cp target/scala-2.13/cloudfront-logs-to-elasticsearch-assembly-0.1.jar com.jsherz.cloudfrontlogstoes.ProcessCurrentFiles
 ```
 
 ## Running as a daemon
@@ -70,7 +70,7 @@ process the notifications to parse the logs:
 ```bash
 export ELASTICSEARCH_HOST=http://vms:9200
 export NOTIFICATION_QUEUE_URL=https://sqs.eu-west-1.amazonaws.com/123456789012/jsherz-logs
-java -jar target/scala-2.13/cloudfront-logs-to-elasticsaerch-assembly-0.1.jar
+java -jar target/scala-2.13/cloudfront-logs-to-elasticsearch-assembly-0.1.jar
 ```
 
 ### See also

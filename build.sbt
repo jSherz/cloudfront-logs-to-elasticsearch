@@ -1,6 +1,6 @@
 import org.apache.ivy.core.module.descriptor.ExcludeRule
 
-name := "cloudfront-logs-to-elasticsaerch"
+name := "cloudfront-logs-to-elasticsearch"
 
 version := "1.0"
 
