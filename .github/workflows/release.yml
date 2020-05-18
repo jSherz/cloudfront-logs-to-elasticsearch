@@ -30,7 +30,7 @@ jobs:
       run: sbt test
 
     - name: Build shaded jar
-      run: sbt coverageOff assembly
+      run: sbt 'set test in assembly := {}' clean coverageOff assembly
     
     - name: Move jar to predictable name
       run: mv target/scala-2.13/*.jar target/cloudfront-logs-to-elasticsearch.jar
